@@ -36,17 +36,17 @@ class Empresas extends Component {
 
   render() {
     const data = [{
-      nome: 'Nome empresa',
+      nome: (<a href="/fornecedor">Nome empresa</a>),
       cnpj: '22.142.278/0001-36',
       ultimaLicitacao: (new Date()).toLocaleDateString(),
       historico: (<Line data={line} redraw={false} options={{ maintainAspectRatio: false }} height={80} width={90} />),
     }, {
-      nome: 'Nome empresa',
+      nome: (<a href="/fornecedor">Nome empresa</a>),
       cnpj: '22.142.278/0001-36',
       ultimaLicitacao: (new Date()).toLocaleDateString(),
       historico: (<Line data={line} redraw={false} options={{ maintainAspectRatio: false }} height={80} width={90} />),
     }, {
-      nome: 'Nome empresa',
+      nome: (<a href="/fornecedor">Nome empresa</a>),
       cnpj: '22.142.278/0001-36',
       ultimaLicitacao: (new Date()).toLocaleDateString(),
       historico: (<Line data={line} redraw={false} options={{ maintainAspectRatio: false }} height={80} width={90} />),
