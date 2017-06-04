@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Bar, Doughnut, Line, Pie, Polar, Radar, HorizontalBar } from 'react-chartjs-2';
+import Table from '../../components/Table/Table';
+import CardBlock from '../../components/CardBlock/CardBlock';
 
 const line = {
   labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
@@ -68,59 +70,87 @@ const bar = {
   ]
 };
 
+const lineOpts = {
+    maintainAspectRatio: false,
+    legend: {
+        display: false
+    },
+    scales: {
+        xAxes: [{
+        gridLines: {
+            color: 'transparent',
+            zeroLineColor: 'transparent'
+        },
+        ticks: {
+            fontSize: 2,
+            fontColor: 'transparent',
+        }
+
+        }],
+        yAxes: [{
+        display: false,
+        ticks: {
+            display: false,
+            min: Math.min.apply(Math, line.datasets[0].data) - 5,
+            max: Math.max.apply(Math, line.datasets[0].data) + 5,
+        }
+        }],
+    },
+    elements: {
+        line: {
+        borderWidth: 1
+        },
+        point: {
+        radius: 4,
+        hitRadius: 10,
+        hoverRadius: 4,
+        },
+    }
+}
+
 export default class Licitacao extends Component {
 
   render() {
+    const data = [{
+      numero: '2013069',
+      orgao: 'Prefeitura',
+      modalidade: 'Pregão',
+      fornecedor: 'Fornecedor x',
+      data_publicacao: (new Date()).toLocaleDateString(),
+      data_validade: (new Date()).toLocaleDateString(),
+      valor: 100000,
+    }, {
+      numero: '2013069',
+      orgao: 'Prefeitura',
+      modalidade: 'Pregão',
+      fornecedor: 'Fornecedor x',
+      data_publicacao: (new Date()).toLocaleDateString(),
+      data_validade: (new Date()).toLocaleDateString(),
+      valor: 100000,
+    }, {
+      numero: '2013069',
+      orgao: 'Prefeitura',
+      modalidade: 'Pregão',
+      fornecedor: 'Fornecedor x',
+      data_publicacao: (new Date()).toLocaleDateString(),
+      data_validade: (new Date()).toLocaleDateString(),
+      valor: 100000,
+    }];
     return (
       <div className="animated fadeIn">
         <h1>Licitações</h1>
-        <div>
-            <div className="card">
-                <div className="card-header">
-                    <div>
-                        <span>Empresa:</span>
-                        <span>Empresa x</span>
-                    </div>
-                    <div>
-                        <span>Modalidade:</span>
-                        <span>Pregão</span>
-                    </div>
-                </div>
-                <div className="card-block">
-                    <div className="chart-wrapper">
-                        <Bar data={barPrefeituras}
-                            options={line.options}
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className="card">
-                <div className="card-header">
-                    <span>Maiores licitações por empresa</span>
-                </div>
-                <div className="card-block">
-                    <div className="chart-wrapper">
-                        <Bar data={bar}
-                            options={{
-                            maintainAspectRatio: false
-                            }}
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className="card">
-                <div className="card-header">
-                    <span>Licitação x</span>
-                </div>
-                <div className="card-block">
-                    <div className="chart-wrapper">
-                        <Line data={line}
-                            options={line.options}
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
+         <div>
+             <div className="row">
+                 <CardBlock
+                    cardClass="card-primary"
+                    title="R$ 9.950"
+                    text="Gastos"
+                    chart={<Line data={line} options={lineOpts} height={70}/>}
+                 />
+                
+             </div>
+         </div>
+         <Table headers={['Número', 'Órgão', 'Modalidade', 'Fornecedor', 'Data de publicação', 'Data de validade', 'Valor']} data={data} />
       </div>
     )
   }
