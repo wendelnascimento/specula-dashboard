@@ -20,7 +20,7 @@ class Dashboard extends Component {
             this.startTimer();
             this.setState({ isLoading: true });
             const records2 = await this.getRecords();
-            this.setState({records: records2, isLoading: false});
+            this.setState({records2: records2, isLoading: false});
         }
         catch(e) {
             console.log(e);
@@ -56,16 +56,16 @@ class Dashboard extends Component {
         //return invokeApi({ path: `/steps/task/${this.props.match.params.id}` }, this.props.userToken);
         return [{
           nome: 'Nome empresa',
-          cnpj: '22.142.278/0001-36',
-          ultimaLicitacao: (new Date()).toLocaleDateString()
+          ultimaLicitacao: (new Date()).toLocaleDateString(),
+          valor: 'R$ 200.000,00',
         }, {
           nome: 'Nome empresa',
-          cnpj: '22.142.278/0001-36',
           ultimaLicitacao: (new Date()).toLocaleDateString(),
+          valor: 'R$ 200.000,00',
         }, {
           nome: 'Nome empresa',
-          cnpj: '22.142.278/0001-36',
           ultimaLicitacao: (new Date()).toLocaleDateString(),
+          valor: 'R$ 200.000,00',
         }];
     }
     render() {
@@ -88,7 +88,7 @@ class Dashboard extends Component {
                     <div className="card">
                         <div className="card-block DashboardCellContent">
                             {this.state.records2 && (
-                                <Table headers={['Nome', 'Última licitação', 'Total Superfaturado']} data={this.state.records2} />
+                                <Table headers={['Nome', 'Última Licitação', 'Total Superfaturado']} data={this.state.records2} />
                             )}
                         </div>
                     </div>
@@ -98,7 +98,7 @@ class Dashboard extends Component {
                     <div className="card">
                         <div className="card-block">
                             {this.state.records2 && (
-                                <Table headers={['Nome', 'CNPJ/CPF', 'Última licitação', 'Histórico de licitações', 'Status']} data={this.state.records2} />
+                                <Table headers={['Nome', 'CNPJ/CPF', 'Última Licitação', 'Score']} data={this.state.records2} />
                             )}
                         </div>
                     </div>
