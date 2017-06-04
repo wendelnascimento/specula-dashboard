@@ -54,7 +54,7 @@ class Empresas extends Component {
     return (
       <div className="animated fadeIn">
         <h1>Fornecedores</h1>
-        <Table headers={['Nome', 'CNPJ/CPF', 'Última licitação', 'Histórico de licitações', 'Status']} data={data} />
+        <Table headers={['Nome', 'CNPJ/CPF', 'Última licitação', 'Histórico de licitações']} data={data} />
         {/*<Charts />*/}
       </div>
     )
