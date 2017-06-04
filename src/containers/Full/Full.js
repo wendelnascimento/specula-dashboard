@@ -6,7 +6,8 @@ import Breadcrumb from '../../components/Breadcrumb/';
 import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
 
-import Dashboard from '../../views/Dashboard/'
+import Dashboard from '../../views/Dashboard/';
+import Licitacao from '../../views/Licitacao/Licitacao';
 import Empresas from '../../views/Empresas/'
 
 class Full extends Component {
@@ -21,6 +22,7 @@ class Full extends Component {
             <div className="container-fluid">
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/licitacoes" name="Licitacoes" component={Licitacao} />
                 <Route path="/empresas" name="Empresas" component={Empresas}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
