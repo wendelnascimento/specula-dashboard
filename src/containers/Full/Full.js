@@ -8,8 +8,8 @@ import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
 import Licitacao from '../../views/Licitacao/Licitacao';
-import Empresas from '../../views/Empresas/';
-import Empresa from '../../views/Empresas/Empresa';
+import Fornecedores from '../../views/Empresas/';
+import Fornecedor from '../../views/Empresas/Empresa';
 
 class Full extends Component {
   render() {
@@ -22,10 +22,10 @@ class Full extends Component {
             <Breadcrumb />
             <div className="container-fluid">
               <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/dashboard" name="Dashboard" component={Dashboard} start={new Date()}/>
                 <Route path="/licitacoes" name="Licitacoes" component={Licitacao} />
-                <Route path="/empresas" name="Empresas" component={Empresas}/>
-                <Route path="/empresa" name="Empresa" component={Empresa}/>
+                <Route path="/fornecedores" name="Fornecedores" component={Fornecedores}/>
+                <Route path="/fornecedor" name="Fornecedor" component={Fornecedor}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </div>

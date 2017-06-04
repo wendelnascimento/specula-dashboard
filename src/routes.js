@@ -2,7 +2,7 @@ const routes = {
   '/': 'Home',
   '/dashboard': 'Dashboard',
   '/licitacoes': 'Licitações',
-  '/empresas': 'Empresas',
-  '/empresa': 'Empresa',
+  '/fornecedores': 'Fornecedores',
+  '/fornecedor': 'Fornecedor',
 };
 export default routes;

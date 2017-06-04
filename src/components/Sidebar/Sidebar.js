@@ -32,7 +32,7 @@ class Sidebar extends Component {
               <NavLink to={'/licitacoes'} className="nav-link" activeClassName="active"><i className="icon-docs"></i> Licitações</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to={'/empresas'} className="nav-link" activeClassName="active"><i className="icon-notebook"></i> Fornecedores</NavLink>
+              <NavLink to={'/fornecedores'} className="nav-link" activeClassName="active"><i className="icon-notebook"></i> Fornecedores</NavLink>
             </li>
           </ul>
         </nav>
