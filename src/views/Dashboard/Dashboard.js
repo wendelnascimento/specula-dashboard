@@ -12,7 +12,7 @@ class Dashboard extends Component {
             records1: null,
             records2: null,
             records3: null,
-            count: parseInt((new Date()).getTime()/10000000),
+            count: 43741238658.4500,
         }
     }
     async componentDidMount() {
@@ -34,7 +34,7 @@ class Dashboard extends Component {
     }
     startTimer () {
         clearInterval(this.timer)
-        this.timer = setInterval(this.tick.bind(this), 1000)
+        this.timer = setInterval(this.tick.bind(this), 10000)
     }
     formatMoney(amount){
         amount = amount.toFixed(2)
@@ -54,19 +54,8 @@ class Dashboard extends Component {
     }
     getRecords() {
         //return invokeApi({ path: `/steps/task/${this.props.match.params.id}` }, this.props.userToken);
-        return [{
-          nome: 'Nome empresa',
-          ultimaLicitacao: (new Date()).toLocaleDateString(),
-          valor: 'R$ 200.000,00',
-        }, {
-          nome: 'Nome empresa',
-          ultimaLicitacao: (new Date()).toLocaleDateString(),
-          valor: 'R$ 200.000,00',
-        }, {
-          nome: 'Nome empresa',
-          ultimaLicitacao: (new Date()).toLocaleDateString(),
-          valor: 'R$ 200.000,00',
-        }];
+        return [
+            {DocumentoFornecedor:"50866490000181",variancia:1.1067789911457161E+20},{DocumentoFornecedor:"08849334000146",variancia:3.610870026220741E+19},{DocumentoFornecedor:"08003772000199",variancia:3.1481440490729274E+17},{DocumentoFornecedor:"50123496000169",variancia:1.5508226168314118E+17},{DocumentoFornecedor:"60742616000160",variancia:1929026794364918.3}];
     }
     render() {
         return (
@@ -88,12 +77,12 @@ class Dashboard extends Component {
                     <div className="card">
                         <div className="card-block DashboardCellContent">
                             {this.state.records2 && (
-                                <Table headers={['Nome', 'Última Licitação', 'Total Superfaturado']} data={this.state.records2} />
+                                <Table headers={['CPF/CNPJ', 'Total Suspeito']} data={this.state.records2} />
                             )}
                         </div>
                     </div>
                 </div>
-                <div className="animated fadeIn col-sm-12">
+                {/*<div className="animated fadeIn col-sm-12">
                     <h2>Licitações Recentes</h2>
                     <div className="card">
                         <div className="card-block">
@@ -102,7 +91,7 @@ class Dashboard extends Component {
                             )}
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
         )
     }
