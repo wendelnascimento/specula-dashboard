@@ -4,7 +4,7 @@
     border-radius: 5px;
 }
 .Currency{
-    width:10%;
+    width:5%;
     float: left;
     text-align: right;
     padding-top: 75px;
@@ -12,7 +12,7 @@
 .Timer{
     font-size: 80px;
     color: #fb7665;
-    width:90%;
+    width:95%;
     float: right;
     text-align: right;
 }

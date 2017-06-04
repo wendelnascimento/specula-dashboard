@@ -84,7 +84,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div className="animated fadeIn col-sm-6">
-                    <h2>Top 5 - Empresas Suspeitas</h2>
+                    <h2>Top 5 - Empresas</h2>
                     <div className="card">
                         <div className="card-block DashboardCellContent">
                             {this.state.records2 && (
@@ -94,7 +94,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div className="animated fadeIn col-sm-12">
-                    <h2>Contratos Recentes Suspeitos</h2>
+                    <h2>Licitações Recentes</h2>
                     <div className="card">
                         <div className="card-block">
                             {this.state.records2 && (
