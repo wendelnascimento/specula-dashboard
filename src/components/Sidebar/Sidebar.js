@@ -36,6 +36,8 @@ class Sidebar extends Component {
             </li>
           </ul>
         </nav>
+
+        
       </div>
     )
   }
