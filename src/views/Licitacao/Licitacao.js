@@ -4,14 +4,14 @@ import Table from '../../components/Table/Table';
 import CardBlock from '../../components/CardBlock/CardBlock';
 
 const line = {
-  labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+  labels: ['Abril', 'Maio', 'Junho'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'Gasto com licitações em R$',
       fill: false,
       lineTension: 0.1,
-      backgroundColor: 'rgba(75,192,192,0.4)',
-      borderColor: 'rgba(75,192,192,1)',
+      backgroundColor: '#20a8d8',
+      borderColor: 'rgba(255,255,255,.5)',
       borderCapStyle: 'butt',
       borderDash: [],
       borderDashOffset: 0.0,
@@ -25,7 +25,7 @@ const line = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
+      data: [90, 59, 80]
     }
   ],
   options: {
@@ -40,34 +40,34 @@ const line = {
   }
 };
 
-const barPrefeituras = {
-  labels: ['São Paulo', 'Freguesia do Ó', 'Osasco'],
+const lineQty = {
+  labels: ['Abril', 'Maio', 'Junho'],
   datasets: [
     {
-      label: 'Licitação em R$',
-      backgroundColor: 'rgba(255,99,132,0.2)',
-      borderColor: 'rgba(255,99,132,1)',
-      borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 27]
+      label: 'Quantidade de licitações',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: '#20a8d8',
+      borderColor: 'rgba(255,255,255,.5)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [90, 59, 80]
     }
-  ]
-};
-
-const bar = {
-  labels: ['Janeiro', 'Fevereiro', 'Março'],
-  datasets: [
-    {
-      label: 'My First dataset',
-      backgroundColor: 'rgba(255,99,132,0.2)',
-      borderColor: 'rgba(255,99,132,1)',
-      borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 27]
-    }
-  ]
+  ],
+  options: {
+      maintainAspectRatio: false
+  }
 };
 
 const lineOpts = {
@@ -116,6 +116,7 @@ export default class Licitacao extends Component {
       orgao: 'Prefeitura',
       modalidade: 'Pregão',
       fornecedor: 'Fornecedor x',
+      cpf_cnpj: '412.113.688-82',
       data_publicacao: (new Date()).toLocaleDateString(),
       data_validade: (new Date()).toLocaleDateString(),
       valor: 100000,
@@ -124,6 +125,7 @@ export default class Licitacao extends Component {
       orgao: 'Prefeitura',
       modalidade: 'Pregão',
       fornecedor: 'Fornecedor x',
+      cpf_cnpj: '412.113.688-82',
       data_publicacao: (new Date()).toLocaleDateString(),
       data_validade: (new Date()).toLocaleDateString(),
       valor: 100000,
@@ -132,6 +134,7 @@ export default class Licitacao extends Component {
       orgao: 'Prefeitura',
       modalidade: 'Pregão',
       fornecedor: 'Fornecedor x',
+      cpf_cnpj: '412.113.688-82',
       data_publicacao: (new Date()).toLocaleDateString(),
       data_validade: (new Date()).toLocaleDateString(),
       valor: 100000,
@@ -142,15 +145,22 @@ export default class Licitacao extends Component {
          <div>
              <div className="row">
                  <CardBlock
+                    cols="com-sm-6 col-lg-6"
                     cardClass="card-primary"
                     title="R$ 9.950"
-                    text="Gastos"
+                    text="Gastos com licitações"
                     chart={<Line data={line} options={lineOpts} height={70}/>}
                  />
-                
+                <CardBlock
+                    cols="com-sm-6 col-lg-6"
+                    cardClass="card-success"
+                    title="50"
+                    text="Quantidade de licitações"
+                    chart={<Line data={lineQty} options={lineOpts} height={70}/>}
+                 />
              </div>
          </div>
-         <Table headers={['Número', 'Órgão', 'Modalidade', 'Fornecedor', 'Data de publicação', 'Data de validade', 'Valor']} data={data} />
+         <Table headers={['Número', 'Órgão', 'Modalidade', 'Fornecedor', 'CPF/CNPJ', 'Data de publicação', 'Data de validade', 'Valor']} data={data} />
       </div>
     )
   }

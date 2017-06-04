@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardBlock = (props) => (
-    <div className="col-sm-6 col-lg-3">
+    <div className={props.cols ? props.cols : "col-sm-6 col-lg-3"}>
         <div className={`card card-inverse ${props.cardClass}`}>
             <div className="card-block pb0">
                 <h4 className="mb-0">{props.title}</h4>
