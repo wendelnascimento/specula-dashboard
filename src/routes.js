@@ -1,7 +1,8 @@
 const routes = {
   '/': 'Home',
   '/dashboard': 'Dashboard',
-  '/licitacoes': 'Licitacao',
+  '/licitacoes': 'Licitações',
   '/empresas': 'Empresas',
+  '/empresa': 'Empresa',
 };
 export default routes;

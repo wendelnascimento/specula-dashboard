@@ -8923,6 +8923,17 @@ hr.transparent {
 .table td {
   max-width: 600px !important;
   max-height: 150px !important;
+  border: none;
+  padding: 10px;
+}
+
+.table thead th {
+  border: none;
+  padding: 10px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #fff;
 }
 
 .table td canvas {
