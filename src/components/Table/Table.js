@@ -36,12 +36,25 @@ class Table extends Component {
 
   renderBody() {
     return this.props.data.map((item, i) => {
-      let keys = Object.keys(item);
-      const columns = keys.map(column => (<td>{item[column]}</td>));
-      console.log(columns)
+      const columns = [];
+      for(let i = 0, keys = Object.keys(item); i < keys.length; i++) {
+        switch(keys[i]) {
+          case 'Retranca':
+          case 'Licitacao':
+          case 'Processo':
+          case 'Evento':
+          case 'Objeto':
+          case 'TipoFornecedor':
+          case 'DataAssinatura':
+          case 'TipoValidade':
+          case 'NumeroContrato':
+            break;
+          default:
+            columns.push(<td>{item[keys[i]]}</td>)
+        }
+      }
       // return (<tr> <td> dawdd </td> </tr>)
       return (<tr key={i}>{columns}</tr>);
-
     });
   }
 
