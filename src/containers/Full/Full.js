@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
 import Licitacao from '../../views/Licitacao/Licitacao';
+import Empresas from '../../views/Empresas/'
 
 class Full extends Component {
   render() {
@@ -22,6 +23,7 @@ class Full extends Component {
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                 <Route path="/licitacoes" name="Licitacoes" component={Licitacao} />
+                <Route path="/empresas" name="Empresas" component={Empresas}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </div>

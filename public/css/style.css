@@ -8918,3 +8918,18 @@ hr.transparent {
     border-right-color: #f86c6b; }
   *[dir="rtl"] .callout-success {
     border-right-color: #4dbd74; }
+
+
+.Graph {
+  max-width: 600px !important;
+  max-height: 150px !important;
+}
+
+.Graph canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.table td {
+  vertical-align: middle;
+}
