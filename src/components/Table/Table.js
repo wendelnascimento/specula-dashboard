@@ -35,17 +35,14 @@ class Table extends Component {
 
 
   renderBody() {
-    return this.props.data.map((item, i) => (
-      <tr key={i}>
-        <td>{item.nome}</td>
-        <td>{item.cnpj}</td>
-        <td>{item.ultimaLicitacao}</td>
-        <td className="Graph">{item.historico}</td>
-        <td>
-          <span className="badge badge-success">Ativa</span>
-        </td>
-      </tr>
-    ))
+    return this.props.data.map((item, i) => {
+      let keys = Object.keys(item);
+      const columns = keys.map(column => (<td>{item[column]}</td>));
+      console.log(columns)
+      // return (<tr> <td> dawdd </td> </tr>)
+      return (<tr key={i}>{columns}</tr>);
+
+    });
   }
 
 

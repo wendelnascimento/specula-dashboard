@@ -8920,12 +8920,12 @@ hr.transparent {
     border-right-color: #4dbd74; }
 
 
-.Graph {
+.table td {
   max-width: 600px !important;
   max-height: 150px !important;
 }
 
-.Graph canvas {
+.table td canvas {
   max-width: 100%;
   max-height: 100%;
 }
