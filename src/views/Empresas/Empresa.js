@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
+import { Bar, Doughnut, Line, Pie } from 'react-chartjs-2';
+import CardBlock from '../../components/CardBlock/CardBlock';
 
 const bar = {
   labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
@@ -15,6 +16,83 @@ const bar = {
     }
   ]
 };
+
+
+const line = {
+  labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+  datasets: [
+    {
+      label: 'My First dataset',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 59, 80, 81, 56, 55, 40]
+    }
+  ],
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  callback: (value, index, values) => `R$${value}`
+              }
+          }]
+      },
+      maintainAspectRatio: false
+  }
+};
+
+
+const lineOpts = {
+    maintainAspectRatio: false,
+    legend: {
+        display: false
+    },
+    scales: {
+        xAxes: [{
+        gridLines: {
+            color: 'transparent',
+            zeroLineColor: 'transparent'
+        },
+        ticks: {
+            fontSize: 2,
+            fontColor: 'transparent',
+        }
+
+        }],
+        yAxes: [{
+        display: false,
+        ticks: {
+            display: false,
+            min: Math.min.apply(Math, line.datasets[0].data) - 5,
+            max: Math.max.apply(Math, line.datasets[0].data) + 5,
+        }
+        }],
+    },
+    elements: {
+        line: {
+        borderWidth: 1
+        },
+        point: {
+        radius: 4,
+        hitRadius: 10,
+        hoverRadius: 4,
+        },
+    }
+}
 
 
 const pie = {
@@ -63,8 +141,28 @@ export default class Empresa extends Component {
     return (
       <div className="animated fadeIn">
         <h1>{ this.state.data.nome }</h1>
-        <h4>Já faturou R$ { this.state.data.faturamento } </h4>
-        <h4>Atendendo licitações { this.state.data.licitacoesAtendidas } desde DATE</h4>
+        <div className="row">
+          <div className="col-md-6">
+            <p><strong>CNPJ/CPF: </strong> 52.685.479/0001-36 </p>
+          </div>
+          <div className="col-md-6">
+            <p><strong>Segmento: </strong> Transporte de bens </p>
+          </div>
+        </div>
+        <div className="row">
+          <CardBlock
+              cols="col-sm-6"
+              cardClass="card-success"
+              title={ 'R$ ' + this.state.data.faturamento } 
+              text="Faturados com licitações"
+              chart={<Line data={line} options={lineOpts} height={70}/>} />
+          <CardBlock
+              cols="col-sm-6"
+              cardClass="card-warning"
+              title={ this.state.data.licitacoesAtendidas } 
+              text={`Licitações desde ${this.state.data.inicio}`}
+              chart={<Line data={line} options={lineOpts} height={70}/>} />
+        </div>
 
         <div className="row">
           <div className="col-md-6">

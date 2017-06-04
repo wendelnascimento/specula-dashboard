@@ -8919,17 +8919,10 @@ hr.transparent {
   *[dir="rtl"] .callout-success {
     border-right-color: #4dbd74; }
 
-
-.table td {
-  max-width: 600px !important;
-  max-height: 150px !important;
-}
-
-.table td canvas {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 .table td {
   vertical-align: middle;
-}
+  max-width: 600px !important;
+  max-height: 150px !important; }
+  .table td canvas {
+    max-width: 100%;
+    max-height: 100%; }
