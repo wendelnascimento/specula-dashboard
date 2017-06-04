@@ -1,0 +1,23 @@
+.DashboardCellContent{
+    min-height: 300px;
+    background: #FFF;
+    border-radius: 5px;
+}
+.Currency{
+    width:10%;
+    float: left;
+    text-align: right;
+    padding-top: 75px;
+}
+.Timer{
+    font-size: 80px;
+    color: #fb7665;
+    width:90%;
+    float: right;
+    text-align: right;
+}
+.TimerLegend{
+    width:100%;
+    text-align: right;
+    float: right;
+}

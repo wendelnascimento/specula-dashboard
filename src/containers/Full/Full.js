@@ -21,7 +21,7 @@ class Full extends Component {
             <Breadcrumb />
             <div className="container-fluid">
               <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/dashboard" name="Dashboard" component={Dashboard} start={new Date()}/>
                 <Route path="/licitacoes" name="Licitacoes" component={Licitacao} />
                 <Route path="/empresas" name="Empresas" component={Empresas}/>
                 <Redirect from="/" to="/dashboard"/>
