@@ -1,17 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { createBrowserHistory } from 'history';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
-// Containers
-import Full from './containers/Full/'
-
-const history = createBrowserHistory();
-
-ReactDOM.render((
-  <BrowserRouter history={history}>
-    <Switch>
-      <Route path="/" name="Home" component={Full}/>
-    </Switch>
-  </BrowserRouter>
-), document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
